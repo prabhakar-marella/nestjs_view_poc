@@ -1,7 +1,7 @@
 # 🚗 NestJS + Prisma Vehicles API (POC)
 
 This is a proof-of-concept (POC) API built with **NestJS** and **Prisma ORM**.  
-It demonstrates how to use Prisma Enums (`$Enums`) end-to-end for vehicle listings.
+It demonstrates how to use Prisma for vehicle listings.
 
 ---
 
@@ -19,8 +19,12 @@ It demonstrates how to use Prisma Enums (`$Enums`) end-to-end for vehicle listin
 git clone https://github.com/prabhakar-marella/nestjs_api_poc.git
 cd nestjs_api_poc
 
+---
+
 ### 2. Install dependencies
 npm install
+
+---
 
 ### 3. Setup environment variables
 Create a .env file in the project root:
@@ -33,11 +37,17 @@ user → your MySQL username
 password → your MySQL password
 mydb → your database name
 
+---
+
 ### 4. Run Prisma migrations
 npx prisma migrate dev --name init
 
+---
+
 ### 5. Generate Prisma client
 npx prisma generate
+
+---
 
 ### 6. Start the application
 npm run start:dev
