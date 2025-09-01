@@ -1,7 +1,7 @@
 # 🚗 NestJS + Prisma Vehicles API (POC)
 
 This is a proof-of-concept (POC) API built with **NestJS** and **Prisma ORM**.  
-It demonstrates how to use Prisma for vehicle listings.
+It demonstrates how to use Prisma for vehicle listings for API and HTML Views.
 
 ---
 
@@ -16,8 +16,8 @@ It demonstrates how to use Prisma for vehicle listings.
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/prabhakar-marella/nestjs_api_poc.git
-cd nestjs_api_poc
+git clone https://github.com/prabhakar-marella/nestjs_view_poc.git
+cd nestjs_view_poc
 
 ---
 
