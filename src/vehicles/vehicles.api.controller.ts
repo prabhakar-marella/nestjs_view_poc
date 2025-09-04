@@ -1,12 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
+import { Controller, Get, Param, ParseIntPipe, NotFoundException } from "@nestjs/common";
+import { VehiclesService } from "./vehicles.service";
 
-@Controller('api/vehicles')
+@Controller("api/vehicles")
 export class VehiclesApiController {
-  constructor(private prisma: PrismaService) {}
+  constructor(private svc: VehiclesService) {}
 
   @Get()
-  async getVehicles() {
-    return this.prisma.vehicle.findMany({ take: 20 });
+  async list() {
+    return this.svc.findAll();
+  }
+
+  @Get(":id")
+  async getOne(@Param("id", ParseIntPipe) id: number) {
+    const v = await this.svc.findOne(id);
+    if (!v) throw new NotFoundException("Vehicle not found");
+    return v;
   }
 }

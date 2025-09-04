@@ -1,13 +1,12 @@
-import { Module } from '@nestjs/common';
-import { VehiclesViewController } from './vehicles.view.controller';
-import { VehiclesApiController } from './vehicles.api.controller';
-import { VehiclesService } from './vehicles.service';
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { Module } from "@nestjs/common";
+import { VehiclesService } from "./vehicles.service";
+import { VehiclesApiController } from "./vehicles.api.controller";
+import { VehiclesViewController } from "./vehicles.view.controller";
+import { PrismaModule } from "../prisma/prisma.module";
 
 @Module({
-  imports: [PrismaModule], 
-  controllers: [VehiclesViewController, VehiclesApiController],
+  imports: [PrismaModule],
+  controllers: [VehiclesApiController, VehiclesViewController],
   providers: [VehiclesService],
-  exports: [VehiclesService],
 })
 export class VehiclesModule {}
