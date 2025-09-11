@@ -119,3 +119,45 @@ model Image {
 
   @@map("images")
 }
+
+model VehiclesCsvImport {
+  id                  Int      @id @default(autoincrement())
+  dealerId            String?  @map("dealer_id")
+  dealerName          String?  @map("dealer_name")
+  vin                 String   @unique
+  stockNo             String?  @map("stock_no")
+  newUsed             String?  @map("new_used")
+  year                Int?
+  make                String?
+  model               String?
+  modelNumber         String?  @map("model_number")
+  body                String?
+  transmission        String?
+  series              String?
+  bodyDoorCt          Int?     @map("body_door_ct")
+  odometer            BigInt?  @map("odometer")
+  engineCylinderCt    Int?     @map("engine_cylinder_ct")
+  engineDisplacement  String?  @map("engine_displacement")
+  drivetrainDesc      String?  @map("drivetrain_desc")
+  colour              String?
+  interiorColor       String?  @map("interior_color")
+  msrp                Decimal? @db.Decimal(12, 2)
+  price               Decimal? @db.Decimal(12, 2)
+  inventoryDate       DateTime? @map("inventory_date")
+  certified           Boolean?
+  description         String?  @db.Text          @map("description")
+  features            String?  @db.Text          @map("features")
+  photoUrlList        String?  @db.Text          @map("photo_url_list")
+  cityMpg             Int?     @map("city_mpg")
+  highwayMpg          Int?     @map("highway_mpg")
+  photosLastModified  DateTime? @map("photos_last_modified")
+  seriesDetail        String?  @map("series_detail")
+  engine              String?
+  fuel                String?
+  age                 Int?
+  tags                String?  @db.Text          @map("tags")
+  createdAt           DateTime @default(now())  @map("created_at")
+  updatedAt           DateTime @updatedAt       @map("updated_at")
+
+  @@map("vehicles_csv_import")
+}

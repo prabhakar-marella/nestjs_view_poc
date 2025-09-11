@@ -5,12 +5,13 @@ import { SpinsModule } from './spins/spins.module';
 import { ImagesModule } from './images/images.module';
 import { VideosModule } from './videos/videos.module';
 import { RooftopsModule } from './rooftops/rooftops.module';
+import { ImportModule } from './import/import.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AppService } from './app.service';
 
 
 @Module({
-  imports: [PrismaModule, VehiclesModule, SpinsModule, ImagesModule, VideosModule, RooftopsModule],
+  imports: [PrismaModule, VehiclesModule, SpinsModule, ImagesModule, VideosModule, RooftopsModule, ImportModule],
   controllers: [AppController],
   providers: [AppService],
 })
